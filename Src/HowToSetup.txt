@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////////////////
+
+1. How to setup Env. 
+
+ sudo apt update
+ sudo apt upgrade
+
+* alsa 사운드 환경 설치
+ sudo apt install alsa-utils
+ sudo apt install libasound2-dev
+
+* alsa 사운드 환경 제거 (참고용)
+ sudo apt remove alsa-utils
+ sudo apt remove libasound2-dev
+
+
+2. 사운드카드 확인 방법
+ lsusb
+
+ aplay -l 
+ => plughw:카드번호,장치번호 확인,
+    ex) plughw:1,0
+
+
+3. 작업물 소스 컴파일
+* g++(컴파일러) 설치
+ sudo apt install g++
+ g++ --version # g++ 설치 확인 방법
+
+
+* 소스 빌드 방법
+ chmod u+x build.sh
+ 
+ ./build.sh #=> 소스 컴파일 명령어, 컴파일 후 micInput 이라는 실행파일이 생성됨
+
+* 192Khz의 샘플링 수행 방법
+ ./micInput #=> 19200Hz의 sampling 341ms 동안 수행 후 종료됨
+
+* Using taskset
+             
+* 녹음된 파일 재생하기 
+ ./aplay -t wav -c 1 -f S16_LE -r 192000 sound1.wav #=> 생성된 sound1.wav 를 재생함.
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+   
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+ 
